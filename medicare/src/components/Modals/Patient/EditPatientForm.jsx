@@ -7,6 +7,8 @@ function EditPatientForm({ openModal, setOpenModal }) {
   const dispatch = useDispatch();
   const [editForm, setEditForm] = useState(openModal.data);
 
+  const { wards } = useSelector((state) => state.wards);
+
   const handleUpdatePatient = () => {
     dispatch(
       updatePatientAsync({ id: editForm._id, updatedPatient: editForm })
@@ -21,7 +23,7 @@ function EditPatientForm({ openModal, setOpenModal }) {
           <p>Age:</p>
           <p>Gender:</p>
           <p>Contact:</p>
-          <p>Medical History:</p>
+          <p className="mb-10">Medical History:</p>
           <p>Ward:</p>
         </div>
         <div className="flex flex-col gap-4">
@@ -58,20 +60,27 @@ function EditPatientForm({ openModal, setOpenModal }) {
             className="w-40 px-2 py-1 border-slate-600 border rounded-md"
             type="number"
           />
-          <input
-            value={editForm.attendance}
+          <textarea
+            value={editForm.medicalHistory}
             onChange={(e) =>
-              setEditForm({ ...editForm, attendance: Number(e.target.value) })
+              setEditForm({ ...editForm, medicalHistory: e.target.value })
             }
-            className="w-40 px-2 py-1 border-slate-600 border rounded-md"
-            type="number"
+            className="w-40 h-20 text-sm px-2 py-1 border-slate-600 border rounded-md"
           />
-          <input
+          <select
+            onChange={(e) =>
+              setEditForm({ ...editForm, ward: e.target.value })
+            }
             value={editForm.ward}
-            onChange={(e) => setEditForm({ ...editForm, ward: e.target.value })}
-            className="w-40 px-2 py-1 border-slate-600 border rounded-md"
+            className="w-40 text-sm px-2 py-1 border-slate-600 border rounded-md"
             type="text"
-          />
+          >
+            {wards.map((ward, index) => (
+              <option key={index} value={ward.wardNo}>
+                {ward.wardNo} - {ward.department.toUpperCase()}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
       <div className="flex gap-8 mb-4">

@@ -26,7 +26,7 @@ function AddPatientForm({ openModal, setOpenModal }) {
           <p>Age:</p>
           <p>Gender:</p>
           <p>Contact:</p>
-          <p>Medical History:</p>
+          <p className="mb-10">Medical History:</p>
           <p>Ward:</p>
         </div>
         <div className="flex flex-col gap-4">
@@ -69,16 +69,16 @@ function AddPatientForm({ openModal, setOpenModal }) {
             className="w-40 px-2 py-1 border-slate-600 border rounded-md"
             type="number"
           />
-          <input
-            value={patientForm.attendance || ""}
+          <textarea
+            value={patientForm.medicalHistory || ""}
             onChange={(e) =>
               setPatientForm({
                 ...patientForm,
-                attendance: Number(e.target.value),
+                medicalHistory: e.target.value,
               })
             }
-            className="w-40 px-2 py-1 border-slate-600 border rounded-md"
-            type="number"
+            className="w-40 h-20 text-sm px-2 py-1 border-slate-600 border rounded-md"
+            
           />
           <select
             onChange={(e) =>

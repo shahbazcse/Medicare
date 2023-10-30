@@ -17,12 +17,12 @@ function PatientDetail({ openModal, setOpenModal }) {
   return (
     <div className="flex flex-col gap-8 items-center justify-center">
       <div className="flex gap-6 text-lg items-center justify-center">
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-8">
           <p>Name:</p>
           <p>Age:</p>
           <p>Gender:</p>
           <p>Contact:</p>
-          <p>Medical History:</p>
+          <p className="mb-6">Medical History:</p>
           <p>Ward:</p>
         </div>
         <div className="flex flex-col gap-4">
@@ -38,9 +38,9 @@ function PatientDetail({ openModal, setOpenModal }) {
           <p className="w-40 px-2 py-1 border-slate-600 border rounded-md">
             {contact}
           </p>
-          <p className="w-40 px-2 py-1 border-slate-600 border rounded-md">
-            {0}
-          </p>
+          <div className="w-40 h-20 px-2 py-1 text-sm border cursor-pointer drop-shadow-md rounded-md overflow-auto">
+            {medicalHistory}
+          </div>
           <p className="w-40 px-2 py-1 border-slate-600 border rounded-md">
             {ward}
           </p>
