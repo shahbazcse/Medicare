@@ -1,7 +1,11 @@
 import React, { useEffect } from "react";
 import HospitalCard from "../components/HospitalCard/HospitalCard";
 import { useDispatch, useSelector } from "react-redux";
-import { averageStay, topPerformingWard, updateHospitalStats } from "../features/hospital/hospitalSlice";
+import {
+  averageStay,
+  topPerformingWard,
+  updateHospitalStats,
+} from "../features/hospital/hospitalSlice";
 
 import img1 from "../assets/01.svg";
 import img2 from "../assets/02.svg";
@@ -13,8 +17,9 @@ function School() {
   const { patients } = useSelector((state) => state.patients);
   const { wards } = useSelector((state) => state.wards);
 
-  const { totalPatients, totalOccupancyRate } =
-    useSelector((state) => state.hospital);
+  const { totalPatients, totalOccupancyRate } = useSelector(
+    (state) => state.hospital
+  );
 
   useEffect(() => {
     const totalPatients = patients.length;
@@ -24,10 +29,10 @@ function School() {
     dispatch(
       updateHospitalStats({
         totalPatients,
-        totalOccupancyRate
+        totalOccupancyRate,
       })
     );
-  }, [patients, dispatch]);
+  }, [patients, wards, dispatch]);
 
   return (
     <div className="flex flex-wrap items-center justify-center gap-24 mt-14 mx-20">

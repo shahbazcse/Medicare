@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { useSelector } from "react-redux";
 
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
