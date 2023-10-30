@@ -48,7 +48,7 @@ function School() {
       />
       <HospitalCard
         label={"Top Performing Ward"}
-        value={wards[topPerformingWard]?.department.toUpperCase()}
+        value={`${wards[topPerformingWard]?.department.toUpperCase()} WARD`}
         bannerImg={img4}
       />
     </div>

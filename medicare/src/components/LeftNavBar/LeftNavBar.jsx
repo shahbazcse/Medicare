@@ -13,8 +13,8 @@ function LeftNavBar() {
 
   const isActive = (path) => {
     return window.location.pathname === path
-      ? "bg-blue-300"
-      : "bg-blue-100 hover:bg-blue-200";
+      ? "bg-[#f7bbbb]"
+      : "bg-[#FFDFDF] hover:bg-[#fdd3d3]";
   };
 
   return (
@@ -58,21 +58,21 @@ function LeftNavBar() {
           target="_blank"
           rel="noreferrer"
         >
-          <BsGithub className="h-7 w-7 cursor-pointer text-blue-300 hover:text-black" />
+          <BsGithub className="h-7 w-7 cursor-pointer text-[#f7bbbb] hover:text-black" />
         </a>
         <a
           href="https://twitter.com/shahbaz_cse"
           target="_blank"
           rel="noreferrer"
         >
-          <ImTwitter className="h-7 w-7 cursor-pointer text-blue-300 hover:text-blue-400" />
+          <ImTwitter className="h-7 w-7 cursor-pointer text-[#f7bbbb] hover:text-blue-400" />
         </a>
         <a
           href="https://www.linkedin.com/in/shahbazcse/"
           target="_blank"
           rel="noreferrer"
         >
-          <BsLinkedin className="h-7 w-7 cursor-pointer text-blue-300 hover:text-blue-600" />
+          <BsLinkedin className="h-7 w-7 cursor-pointer text-[#f7bbbb] hover:text-blue-600" />
         </a>
       </div>
     </div>

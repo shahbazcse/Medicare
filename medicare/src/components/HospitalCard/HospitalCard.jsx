@@ -9,7 +9,7 @@ function HospitalCard({ label, value, bannerImg }) {
         style={{ backgroundImage: `url(${bannerImg})` }}
         className="m-3 bg-contain bg-center bg-end bg-no-repeat h-full w-full"
       ></div>
-      <div className="flex flex-col gap-3 w-full bg-blue-300 px-4 py-4 backdrop-blur-xl rounded-b-xl">
+      <div className="flex flex-col gap-3 w-full bg-[#f7bbbb] px-4 py-4 backdrop-blur-xl rounded-b-xl">
         <h1 className="text-[2rem]">{value}</h1>
         <p className="text-slate-700 font-bold">{label}</p>
       </div>
