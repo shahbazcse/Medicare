@@ -34,7 +34,7 @@ function WardList({ setOpenModal }) {
                   {ward.wardNo}
                 </span>
               </td>
-              <td className="px-4 py-2 border-b">{ward.department.toUpperCase()}</td>
+              <td className="px-4 py-2 border-b">{ward?.department?.toUpperCase()}</td>
             </tr>
           ))}
         </tbody>
