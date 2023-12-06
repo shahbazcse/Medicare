@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPatients } from "./features/patients/patientsSlice";
 import { fetchWards } from "./features/wards/wardsSlice";
+import NonDesktopPage from "./pages/NonDesktopPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -30,7 +31,11 @@ function App() {
   }, [dispatch, patients, wards]);
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
+    <>
+    <div className="block xl:hidden h-screen">
+        <NonDesktopPage />
+      </div>
+    <div className="hidden xl:flex flex-col justify-center items-center h-screen">
       <TopNavBar setOpenModal={setOpenModal} />
       <div className="flex h-[90%] w-full">
         <div className="w-[20%] ml-8">
@@ -58,6 +63,7 @@ function App() {
         )}
       </div>
     </div>
+    </>
   );
 }
 
