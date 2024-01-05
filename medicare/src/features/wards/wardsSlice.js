@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API = "https://medicarebackend.shahbazahmad12.repl.co/wards";
+const API = "https://medicare-backend-bay.vercel.app/wards";
 
 export const fetchWards = createAsyncThunk("wards/fetchWards", async () => {
   const response = await axios.get(API);

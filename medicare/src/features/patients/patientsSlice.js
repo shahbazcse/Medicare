@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API = "https://medicarebackend.shahbazahmad12.repl.co/patients";
+const API = "https://medicare-backend-bay.vercel.app/patients";
 
 export const fetchPatients = createAsyncThunk(
   "patients/fetchPatients",
